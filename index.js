@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 8000;
 
+const x = 10;
 
 app.listen(port, (err) => {
     if(err){
