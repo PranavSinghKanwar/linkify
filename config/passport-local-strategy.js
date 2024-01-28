@@ -40,4 +40,22 @@ passport.deserializeUser(async function(id, done){
     }
 });
 
+
+passport.checkAuthentication = function(req, res, next){
+    //if user is singed in then pass on to controllers action
+    if(req.isAuthenticated()){
+        return next();
+    }
+    //if user is not signed in
+    return res.redirect('/users/sign-in');
+}
+
+passport.setAuthenticatedUser = function(req, res, next){
+    if(req.isAuthenticated()){
+        res.locals.user = req.user;
+    }
+    next();
+}
+
+
 module.exports = passport;
