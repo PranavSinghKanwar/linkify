@@ -10,6 +10,22 @@ module.exports.profile = async function(req, res){
     });
 }
 
+module.exports.update = async function(req, res){
+    try{
+        if(req.user.id == req.params.id){
+            let isupdated = await User.findByIdAndUpdate(req.params.id, req.body);
+            return res.redirect('back');
+        }
+        else{
+            res.status(401).send('Unauthorized');
+        }
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+
 //rendering the sign up page
 module.exports.signUp = function(req, res){
     if(req.isAuthenticated()){
