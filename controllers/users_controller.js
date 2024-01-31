@@ -3,11 +3,17 @@ const User = require('../models/user');
 
 //rendering the profile page
 module.exports.profile = async function(req, res){
-    let current_user = await User.findById(req.params.id);
-    return res.render('user_profile', {
-        title:"Profile",
-        profile_user: current_user
-    });
+    try{
+        let current_user = await User.findById(req.params.id);
+        return res.render('user_profile', {
+            title:"Profile",
+            profile_user: current_user
+        });
+    }
+    catch(err){
+        console.log(err);
+        return res.redirect('back');
+    }
 }
 
 module.exports.update = async function(req, res){
@@ -22,28 +28,41 @@ module.exports.update = async function(req, res){
     }
     catch(err){
         console.log(err);
+        return res.redirect('back');
     }
 }
 
 
 //rendering the sign up page
 module.exports.signUp = function(req, res){
-    if(req.isAuthenticated()){
-        return res.redirect('/users/profile');
+    try{
+        if(req.isAuthenticated()){
+            return res.redirect('/users/profile');
+        }
+        return res.render('user_sign_up', {
+            title: "Sign Up to Linkify"
+        })
     }
-    return res.render('user_sign_up', {
-        title: "Sign Up to Linkify"
-    })
+    catch(err){
+        console.log(err);
+        return res.redirect('back');
+    }
 }
 
 //rendering the sign in page
 module.exports.signIn = function(req, res){
-    if(req.isAuthenticated()){
-        return res.redirect('/users/profile');
+    try{
+        if(req.isAuthenticated()){
+            return res.redirect('/users/profile');
+        }
+        return res.render('user_sign_in', {
+            title: "Sign In to Linkify"
+        })
     }
-    return res.render('user_sign_in', {
-        title: "Sign In to Linkify"
-    })
+    catch(err){
+        console.log(err);
+        return res.redirect('back');
+    }
 }
 
 // getting and storing the sign up data
@@ -62,7 +81,8 @@ module.exports.create = async function(req, res){
         return res.redirect('/users/sign-in');
     }
     catch(err){
-        console.log('error in signing up', err);
+        console.log(err);
+        return res.redirect('back');
     }
 }
 
@@ -74,11 +94,17 @@ module.exports.createSession = function(req, res){
 
 
 module.exports.destroySession = function(req, res){
-    req.logout((err) => {
-        if (err) {
-          console.error(err);
-          return res.status(500).send("Something went wrong");
-        }
-        res.redirect("/");
-    });
+    try{
+        req.logout((err) => {
+            if (err) {
+            console.error(err);
+            return res.status(500).send("Something went wrong");
+            }
+            res.redirect("/");
+        });
+    }
+    catch(err){
+        console.log(err);
+        return res.redirect('back');
+    }
 }
