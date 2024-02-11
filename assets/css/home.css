@@ -8,3 +8,94 @@
     padding: 10px;
     border-left: 1px solid lightgray;
     height: 100%; }
+
+Reset some default styles
+Reset some default styles
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; }
+
+#home-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; }
+  #home-container #feed-posts {
+    width: 60%;
+    margin-right: 20px; }
+    #home-container #feed-posts h4 {
+      margin-bottom: 10px; }
+    #home-container #feed-posts #new-post-form {
+      margin-bottom: 10px; }
+      #home-container #feed-posts #new-post-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px; }
+        #home-container #feed-posts #new-post-form textarea:focus {
+          outline: none;
+          border-color: #3498db; }
+      #home-container #feed-posts #new-post-form input[type="submit"] {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer; }
+        #home-container #feed-posts #new-post-form input[type="submit"]:hover {
+          background-color: #2980b9; }
+    #home-container #feed-posts #posts-list-container ul {
+      list-style: none; }
+  #home-container #user-friends, #home-container #user-list {
+    width: 30%; }
+    #home-container #user-friends h4, #home-container #user-list h4 {
+      margin-bottom: 10px; }
+    #home-container #user-friends #friend-list, #home-container #user-friends ul, #home-container #user-list #friend-list, #home-container #user-list ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      #home-container #user-friends #friend-list li, #home-container #user-friends ul li, #home-container #user-list #friend-list li, #home-container #user-list ul li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px; }
+        #home-container #user-friends #friend-list li img, #home-container #user-friends ul li img, #home-container #user-list #friend-list li img, #home-container #user-list ul li img {
+          border-radius: 50%;
+          margin-right: 10px; }
+        #home-container #user-friends #friend-list li .remove-friend, #home-container #user-friends ul li .remove-friend, #home-container #user-list #friend-list li .remove-friend, #home-container #user-list ul li .remove-friend {
+          color: #e74c3c;
+          text-decoration: none;
+          margin-left: auto; }
+          #home-container #user-friends #friend-list li .remove-friend:hover, #home-container #user-friends ul li .remove-friend:hover, #home-container #user-list #friend-list li .remove-friend:hover, #home-container #user-list ul li .remove-friend:hover {
+            text-decoration: underline; }
+        #home-container #user-friends #friend-list li .user-friend-name, #home-container #user-friends ul li .user-friend-name, #home-container #user-list #friend-list li .user-friend-name, #home-container #user-list ul li .user-friend-name {
+          text-decoration: none;
+          color: #333;
+          font-weight: bold; }
+  #home-container #user-list {
+    width: 30%; }
+  #home-container #user-chat-box {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 20px; }
+
+@media (max-width: 768px) {
+  #home-container {
+    flex-direction: column; }
+    #home-container #feed-posts, #home-container #user-friends, #home-container #user-list {
+      width: 100%;
+      margin-bottom: 20px; } }

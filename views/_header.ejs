@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
     Page Header
 
     <ul>
@@ -15,4 +15,27 @@
             </li>
         <% } %>
     </ul>
+</header> -->
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <h1>Linkify</h1>
+            <p>Your Social Media Platform</p>
+        </div>
+
+        <ul class="nav-links">
+            <% if(locals.user){ %>
+                <li>
+                    <a href="/users/sign-out" class="sign-out-btn">Sign Out</a>
+                </li>
+            <% }else{ %>
+                <li>
+                    <a href="/users/sign-in">Sign In</a>
+                </li>
+                <li>
+                    <a href="/users/sign-up">Sign Up</a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
 </header>

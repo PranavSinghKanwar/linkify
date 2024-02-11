@@ -1,9 +1,8 @@
-<!-- CHANGE :: Creat the code for chat box -->
 <% if (locals.user){ %>
 	<div id="user-chat-box">
 		<ul id="chat-messages-list">
 			<li class="other-message">
-				<span>Other Message</span>
+				<span>Other Person's message</span>
 			</li>
 			<li class="self-message">
 				<span>
@@ -19,4 +18,45 @@
 		</div>
 
 	</div>
+<% } %>
+
+<% if (locals.user) { %>
+    <div id="user-chat-box">
+        <!-- ... existing chat box HTML ... -->
+    </div>
+    <button id="chat-toggle-button">Toggle Chat</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var chatBox = document.getElementById('user-chat-box');
+            var chatToggleButton = document.getElementById('chat-toggle-button');
+
+            // Toggle chat box visibility on button click
+            chatToggleButton.addEventListener('click', function () {
+                if (chatBox.style.display === 'none' || chatBox.style.display === '') {
+                    chatBox.style.display = 'block';
+                } else {
+                    chatBox.style.display = 'none';
+                }
+            });
+
+            // Example: Send message functionality
+            var chatMessageInput = document.getElementById('chat-message-input');
+            var sendMessageButton = document.getElementById('send-message');
+            var chatMessagesList = document.getElementById('chat-messages-list');
+
+            sendMessageButton.addEventListener('click', function () {
+                var messageText = chatMessageInput.value;
+
+                if (messageText.trim() !== '') {
+                    var li = document.createElement('li');
+                    li.innerHTML = '<span class="self-message">' + messageText + '</span>';
+                    chatMessagesList.appendChild(li);
+
+                    // Clear the input field after sending a message
+                    chatMessageInput.value = '';
+                }
+            });
+        });
+    </script>
 <% } %>

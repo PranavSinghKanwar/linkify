@@ -1,0 +1,19 @@
+li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9; }
+  li p {
+    margin: 0;
+    font-size: 14px; }
+    li p small {
+      display: block;
+      color: #555;
+      margin-top: 5px; }
+    li p .toggle-like-button {
+      color: #3498db;
+      text-decoration: none;
+      cursor: pointer; }
+      li p .toggle-like-button:hover {
+        text-decoration: underline; }

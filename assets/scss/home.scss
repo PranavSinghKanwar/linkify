@@ -12,3 +12,138 @@
         height: 100%;
     }
 }
+Reset some default styles
+Reset some default styles
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+#home-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+
+    #feed-posts {
+        width: 60%;
+        margin-right: 20px;
+
+        h4 {
+            margin-bottom: 10px;
+        }
+
+        #new-post-form {
+            margin-bottom: 10px;
+
+            textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                box-sizing: border-box;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+
+                &:focus {
+                    outline: none;
+                    border-color: #3498db;
+                }
+            }
+
+            input[type="submit"] {
+                background-color: #3498db;
+                color: #fff;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #2980b9;
+                }
+            }
+        }
+
+        #posts-list-container {
+            ul {
+                list-style: none;
+            }
+        }
+    }
+
+    #user-friends, #user-list {
+        width: 30%;
+
+        h4 {
+            margin-bottom: 10px;
+        }
+
+        #friend-list, ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+
+                img {
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+
+                .remove-friend {
+                    color: #e74c3c;
+                    text-decoration: none;
+                    margin-left: auto;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                .user-friend-name {
+                    text-decoration: none;
+                    color: #333;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    #user-list {
+        width: 30%;
+    }
+
+    #user-chat-box {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #home-container {
+        flex-direction: column;
+
+        #feed-posts, #user-friends, #user-list {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}

@@ -1,8 +1,28 @@
-<h1>Sign In</h1>
+<link rel="stylesheet" href="/css/user_sign_in.css">
+<!-- <h1>Sign In</h1>
 
 <form action="/users/create-session" method="post">
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="password" placeholder="Password" required>
 
     <input type="submit" value="Sign In">
-</form>
+</form> -->
+
+<div class="signin-container">
+    <link rel="stylesheet" href="/css/user_sign_in.css">
+    
+    <div class="signin-content">
+        <h1>Sign In</h1>
+
+        <form action="/users/create-session" method="post" class="signin-form">
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="password" name="password" placeholder="Your Password" required>
+
+            <input type="submit" value="Sign In" class="submit-button">
+        </form>
+
+        <p class="filler-text">
+            Welcome back! Connect with your friends and explore new things.
+        </p>
+    </div>
+</div>

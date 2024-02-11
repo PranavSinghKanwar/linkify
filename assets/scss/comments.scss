@@ -1,0 +1,28 @@
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+
+    p {
+        margin: 0;
+        font-size: 14px;
+
+        small {
+            display: block;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .toggle-like-button {
+            color: #3498db;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

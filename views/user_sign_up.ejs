@@ -1,3 +1,4 @@
+<!-- <link rel="stylesheet" href="/css/user_sign_up.css">
 <h1>Sign Up</h1>
 
 <form action="/users/create" method="post">
@@ -7,4 +8,25 @@
     <input type="password" name="confirm_password" placeholder="Confirm Password" required>
 
     <input type="submit" value="Sign In">
-</form>
+</form> -->
+<div class="signup-container">
+    <link rel="stylesheet" href="/css/user_sign_up.css">
+    
+    <div class="signup-content">
+        <h1>Sign Up</h1>
+
+        <form action="/users/create" method="post" class="signup-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+            <input type="submit" value="Sign Up" class="submit-button">
+        </form>
+
+        <p class="filler-text">
+            Join our amazing community and connect with friends. 
+            Share your thoughts, photos, and more!
+        </p>
+    </div>
+</div>

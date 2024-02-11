@@ -1,20 +1,32 @@
 <link rel="stylesheet" href="/css/user_profile.css">
-
-<img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
-
+<!-- <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100" class="profile-image">
 
 <% if(user.id == profile_user.id){ %>
-    <form action="/users/update/<%= profile_user.id %>" method="post" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Your Name" value="<%=profile_user.name%>" required>
-        <input type="text" name="email" placeholder="Your Email" value="<%=profile_user.email%>" required>
+    <form action="/users/update/<%= profile_user.id %>" method="post" enctype="multipart/form-data" class="update-form">
+        <input type="text" name="name" placeholder="Your Name" value="<%=profile_user.name%>" required class="input-field">
+        <input type="text" name="email" placeholder="Your Email" value="<%=profile_user.email%>" required class="input-field">
 
-        <input type="file", name="avatar" placeholder="Profile Picture">
-        <input type="submit" value="Update">
+        <input type="file" name="avatar" placeholder="Profile Picture" class="file-input">
+        <input type="submit" value="Update" class="submit-button">
     </form>
 <%} else{ %>
-    <p><%= profile_user.name %></p>
-    <p><%= profile_user.email %></p>
+    <p class="profile-info"><%= profile_user.name %></p>
+    <p class="profile-info"><%= profile_user.email %></p>
+<%}%> -->
+<div class="profile-container">
+    <link rel="stylesheet" href="/css/user_profile.css">
+    <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100" class="profile-image">
 
-    <button type="submit">Add Friend</button>
-    <button type="submit">Remove Friend</button>
-<%}%>
+    <% if(user.id == profile_user.id){ %>
+        <form action="/users/update/<%= profile_user.id %>" method="post" enctype="multipart/form-data" class="update-form">
+            <input type="text" name="name" placeholder="Your Name" value="<%=profile_user.name%>" required class="input-field">
+            <input type="text" name="email" placeholder="Your Email" value="<%=profile_user.email%>" required class="input-field">
+
+            <input type="file" name="avatar" placeholder="Profile Picture" class="file-input">
+            <input type="submit" value="Update" class="submit-button">
+        </form>
+    <%} else{ %>
+        <p class="profile-info"><%= profile_user.name %></p>
+        <p class="profile-info"><%= profile_user.email %></p>
+    <%}%>
+</div>

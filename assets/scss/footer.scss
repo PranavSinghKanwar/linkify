@@ -1,0 +1,62 @@
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .footer-section {
+            flex: 1;
+            margin-right: 20px;
+
+            h4 {
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: #3498db; // Adjusted color for section headings
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 1.5;
+                color: #ccc; // Adjusted color for regular text
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    margin-bottom: 5px;
+
+                    a {
+                        color: #000;
+                        text-decoration: none;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        text-align: center;
+
+        p {
+            font-size: 14px;
+            color: #ccc; // Adjusted color for the copyright text
+            span {
+                font-weight: bold;
+                color: #3498db; // Adjusted color for the site name
+            }
+        }
+    }
+}
