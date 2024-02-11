@@ -13,6 +13,18 @@ const flash = require("connect-flash");
 const customMware = require("./config/middleware");
 const passportJWT = require("./config/passport-jwt-strategy");
 
+const chatServer = require('http').createServer(app);
+const io = require("socket.io")(chatServer, {
+    cors: {
+      origin: "http://localhost:8080",
+      methods: ["GET", "POST"]
+    }
+  });
+  
+const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat server is listening on port 5000');
+
 app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
