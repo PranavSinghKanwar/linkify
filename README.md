@@ -1,4 +1,6 @@
-Built a full stack Social Me# Social Media Platform - Linkify
+Built a full stack Social Me# Social Media Platform - Linkify. 
+
+Accessible at: http://13.48.248.99:8000/
 
 Welcome to Linkify, a full-stack social media website that seamlessly integrates a plethora of features to enhance your online social experience. This platform combines cutting-edge technologies and a user-friendly interface to provide a comprehensive social networking solution.
 
