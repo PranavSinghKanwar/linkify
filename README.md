@@ -32,3 +32,5 @@ Linkify leverages a robust technology stack, including Passport.js for authentic
 ## Getting Started
 
 To dive into the Linkify experience, follow the easy setup instructions in the documentation. Explore the codebase and unleash the potential of this feature-rich social media platform.
+
+Just clone the repository onto your local pc and run "npm install" to install all the dependancies and you should be good to go! :)
